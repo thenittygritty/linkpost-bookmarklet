@@ -29,7 +29,7 @@
 			var logo       = document.createTextNode("//");
 			var buttonText = document.createTextNode("Create Linkpost");
 			var selection  = BM.getSelectionHtml();
-			var url	       = window.location;
+			var url        = window.location;
 
 			// Create and style your elements
 			div = BM.getStyledElement('div', {
@@ -84,7 +84,7 @@
 				'border-radius': '2px',
                 float: 'none'
 			};
-			
+
 			inputUrl    = BM.getStyledElement('input', inputStyles);
 			inputTitle  = BM.getStyledElement('input', inputStyles);
 			inputAuthor = BM.getStyledElement('input', inputStyles);
@@ -177,7 +177,7 @@
 			var selection = window.getSelection();
 			var txt       = selection.toString();
 
-	        return txt;
+			return txt;
 		},
 		getStyledElement: function(type, styleObj) {
 			var el   = document.createElement(type);
@@ -207,26 +207,26 @@
 				}
 
 				function submitData (oData) {
-				    /* the AJAX request... */
-				    var oAjaxReq = new XMLHttpRequest();
-				    oAjaxReq.submittedData = oData;
-				    oAjaxReq.onload = ajaxSuccess;
-				    if (oData.technique === 0) {
-						/* method is GET */
-						oAjaxReq.open("get", oData.receiver.replace(/(?:\?.*)?$/, oData.segments.length > 0 ? "?" + oData.segments.join("&") : ""), true);
-						oAjaxReq.send(null);
-				    } else {
+					/* the AJAX request... */
+					var oAjaxReq = new XMLHttpRequest();
+					oAjaxReq.submittedData = oData;
+					oAjaxReq.onload = ajaxSuccess;
+					if (oData.technique === 0) {
+					/* method is GET */
+					oAjaxReq.open("get", oData.receiver.replace(/(?:\?.*)?$/, oData.segments.length > 0 ? "?" + oData.segments.join("&") : ""), true);
+					oAjaxReq.send(null);
+					} else {
 						/* method is POST */
 						oAjaxReq.open("post", oData.receiver, true);
 						if (oData.technique === 3) {
-					        /* enctype is multipart/form-data */
-					        var sBoundary = "---------------------------" + Date.now().toString(16);
-					        oAjaxReq.setRequestHeader("Content-Type", "multipart\/form-data; boundary=" + sBoundary);
-					        oAjaxReq.sendAsBinary("--" + sBoundary + "\r\n" + oData.segments.join("--" + sBoundary + "\r\n") + "--" + sBoundary + "--\r\n");
+							/* enctype is multipart/form-data */
+							var sBoundary = "---------------------------" + Date.now().toString(16);
+							oAjaxReq.setRequestHeader("Content-Type", "multipart\/form-data; boundary=" + sBoundary);
+							oAjaxReq.sendAsBinary("--" + sBoundary + "\r\n" + oData.segments.join("--" + sBoundary + "\r\n") + "--" + sBoundary + "--\r\n");
 						} else {
-					        /* enctype is application/x-www-form-urlencoded or text/plain */
-					        oAjaxReq.setRequestHeader("Content-Type", oData.contentType);
-					        oAjaxReq.send(oData.segments.join(oData.technique === 2 ? "\r\n" : "&"));
+							/* enctype is application/x-www-form-urlencoded or text/plain */
+							oAjaxReq.setRequestHeader("Content-Type", oData.contentType);
+							oAjaxReq.send(oData.segments.join(oData.technique === 2 ? "\r\n" : "&"));
 						}
 					}
 				}
@@ -252,15 +252,15 @@
 				}
 
 				function SubmitRequest (oTarget) {
-				    var nFile, sFieldType, oField, oSegmReq, oFile, bIsPost = oTarget.method.toLowerCase() === "post";
-				    /* console.log("AJAXSubmit - Serializing form..."); */
-				    this.contentType = bIsPost && oTarget.enctype ? oTarget.enctype : "application\/x-www-form-urlencoded";
-				    this.technique = bIsPost ? this.contentType === "multipart\/form-data" ? 3 : this.contentType === "text\/plain" ? 2 : 1 : 0;
-				    this.receiver = oTarget.action;
-				    this.status = 0;
-				    this.segments = [];
-				    var fFilter = this.technique === 2 ? plainEscape : escape;
-				    for (var nItem = 0; nItem < oTarget.elements.length; nItem++) {
+					var nFile, sFieldType, oField, oSegmReq, oFile, bIsPost = oTarget.method.toLowerCase() === "post";
+					/* console.log("AJAXSubmit - Serializing form..."); */
+					this.contentType = bIsPost && oTarget.enctype ? oTarget.enctype : "application\/x-www-form-urlencoded";
+					this.technique = bIsPost ? this.contentType === "multipart\/form-data" ? 3 : this.contentType === "text\/plain" ? 2 : 1 : 0;
+					this.receiver = oTarget.action;
+					this.status = 0;
+					this.segments = [];
+					var fFilter = this.technique === 2 ? plainEscape : escape;
+					for (var nItem = 0; nItem < oTarget.elements.length; nItem++) {
 						oField = oTarget.elements[nItem];
 						if (!oField.hasAttribute("name")) { continue; }
 						sFieldType = oField.nodeName.toUpperCase() === "INPUT" ? oField.getAttribute("type").toUpperCase() : "TEXT";
@@ -279,7 +279,7 @@
 									this.status++;
 									oSegmReq.readAsBinaryString(oFile);
 								}
-							} 
+							}
 							else {
 								/* enctype is application/x-www-form-urlencoded or text/plain or method is GET: files will not be sent! */
 								for (nFile = 0; nFile < oField.files.length; this.segments.push(fFilter(oField.name) + "=" + fFilter(oField.files[nFile++].name)));
@@ -289,24 +289,24 @@
 							/* field type is not FILE or is FILE but is empty */
 							this.segments.push(
 								this.technique === 3 ? /* enctype is multipart/form-data */
-							    "Content-Disposition: form-data; name=\"" + oField.name + "\"\r\n\r\n" + oField.value + "\r\n"
-							  	: /* enctype is application/x-www-form-urlencoded or text/plain or method is GET */
-							    fFilter(oField.name) + "=" + fFilter(oField.value)
+								"Content-Disposition: form-data; name=\"" + oField.name + "\"\r\n\r\n" + oField.value + "\r\n"
+								: /* enctype is application/x-www-form-urlencoded or text/plain or method is GET */
+								fFilter(oField.name) + "=" + fFilter(oField.value)
 							);
 						}
-			    	}
-			    	processStatus(this);
+					}
+					processStatus(this);
 				}
 
-			  return function (oFormElement) {
-			    if (!oFormElement.action) { return; }
-			    new SubmitRequest(oFormElement);
-			  };
+				return function (oFormElement) {
+					if (!oFormElement.action) { return; }
+					new SubmitRequest(oFormElement);
+				};
 
 			})();
 
 			var form    = document.getElementById('linkpostform');
-			
+
 			form.action  = window[ MyNamespace ].config.postUrl;
 			form.method  = 'get';
 			form.enctype = 'application/x-www-form-urlencoded';
