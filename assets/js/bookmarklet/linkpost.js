@@ -5,8 +5,7 @@
 	var MyNamespace = 'w00t!';
 	var config = window[ MyNamespace ].config;
 
-	// Fill in your Kirby linkpost page e.g. http://tng.dev/linkpost/
-	config.postUrl = 'URL TO YOUR LINKPOST PLUGIN PAGE';
+	config.postUrl = 'http://' + config.domain + '/linkpost/';
 
 	// BM for bookmarklet.
 	var BM = window[ MyNamespace ] = {

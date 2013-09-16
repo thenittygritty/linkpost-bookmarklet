@@ -17,8 +17,10 @@
 		config: {
 			// Fill in your author shortname.
 			author: 'FILL IN AUTHOR SHORTNAME',
-			// Fill in the URL to the linkpost.js file.
-			scriptUrl: '//path/to/linkpost.js'
+			// Fill in your local domain, it has to be a .dev or .local TLD.
+			domain: 'tng.dev',
+			// Path to linkpost.js.
+			scriptUrl: 'http://tng.dev/assets/js/bookmarklet/linkpost.min.js'
 		}
 	};
 
