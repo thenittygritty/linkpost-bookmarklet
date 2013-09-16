@@ -37,8 +37,8 @@ function linkpost() {
 		  $newFile  = $newDir . '/' . $templateName;
 		  // Construct the template and fill in the variables.
 		  $template = "Title: $title\n" .
-		  						"----\n" .
-		  						"Link: $link\n" .
+                  "----\n" .
+		  				    "Link: $link\n" .
 		  						"----\n" .
 		  						"Date: " . date('Y-m-d') . "\n" .
 		  						"----\n" .
