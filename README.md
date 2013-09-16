@@ -7,7 +7,7 @@
 This bookmarklet and kirbyplugin was built to create linkposts on [thenittygritty.co](http://thenittygritty.co) but you can easily adapt it to use it on your own Kirby blog.
 
 ## Setup
-For now there is no authentication provided. The kirbyplugin only works if your site has a [`.dev` or `.local` domain](https://github.com/thenittygritty/linkpost-bookmarklet/blob/master/site/plugins/linkpost.php#L10-14) so you can use the bookmarklet only in combination with your locally hosted Kirby installation.
+For now there is no authentication provided. The kirbyplugin only works if your site has a [.dev or .local domain](https://github.com/thenittygritty/linkpost-bookmarklet/blob/master/site/plugins/linkpost.php#L10-14) so you can use the bookmarklet only in combination with your locally hosted Kirby installation.
 
 ### 1. Custom Link Post Type
 First you need to set up a custom post type for linkposts as described in [this article](http://getkirby.com/blog/custom-post-types).
