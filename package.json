@@ -9,9 +9,20 @@
     "type": "git",
     "url": "git@github.com:thenittygritty/linkpost-bookmarklet.git"
   },
-  "author": "Kahlil Lechelt",
+  "author": {
+  	"name": "Kahlil Lechelt"
+  },
+  "homepage": "https://github.com/thenittygritty/linkpost-bookmarklet",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/thenittygritty/linkpost-bookmarklet/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-concat": "~0.3.0"
   }
 }
