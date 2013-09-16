@@ -10,7 +10,7 @@ function linkpost() {
 	$headers = apache_request_headers();
 	$host    = $headers['Host'];
 	$local   = (substr($host, -4) === '.dev' || substr($host, -6) === '.local') ? true : false;
-	
+
 	if ($local) {
 
 	  global $site;
@@ -50,7 +50,7 @@ function linkpost() {
 
 		  // Write the file.
 		  f::write($newFile, $template);
-		  
+
 		  return 'Ok <3';
 	  }
 	  else {

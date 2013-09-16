@@ -15,8 +15,10 @@
 	}
 	window[ MyNamespace ] = {
 		config: {
-			author: 'kahlil-lechelt',
-			scriptUrl: '//tng.dev/assets/js/linkpost.js'
+			// Fill in your author shortname.
+			author: 'FILL IN AUTHOR SHORTNAME',
+			// Fill in the URL to the linkpost.js file.
+			scriptUrl: '//path/to/linkpost.js'
 		}
 	};
 
