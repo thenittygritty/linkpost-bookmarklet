@@ -16,7 +16,7 @@ function linkpost() {
 	  global $site;
 
 	  // Path to the blog content.
-		$path         = 'content/01-home/';
+		$path         = 'PATH TO THE DIRECTORY WITH THE BLOG CONTENT';
 		$templateName = 'article.link.txt';
 	  // Get the data sent to this plugin.
 	  $link   = get('link');
