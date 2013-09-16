@@ -1,8 +1,7 @@
 {
-  "name": "tng-bookmarklet",
+  "name": "linkpost-bookmarklet",
   "version": "1.8.1",
   "description": "TNG linkpost bookmarklet.",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
