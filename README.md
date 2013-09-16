@@ -4,7 +4,7 @@
 
 ![Screenshot](https://raw.github.com/thenittygritty/linkpost-bookmarklet/master/screenshot.png)
 
-This bookmarklet and kirbyplugin was built to create linkposts on [thenittygritty.co](http://thenittygritty.co) but you can easily adapt it to use it on your won Kirby blog.
+This bookmarklet and kirbyplugin was built to create linkposts on [thenittygritty.co](http://thenittygritty.co) but you can easily adapt it to use it on your own Kirby blog.
 
 ## Setup
 
