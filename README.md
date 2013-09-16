@@ -22,11 +22,11 @@ Set the correct path to the directory holding the blog content [in the Kirbyplug
 Copy the linkpost.min.js script into `assets/js/bookmarklet` in your local Kirby installation.
 
 ### 5. Configure Your Bookmarklet
-Set the author shortname [on line 19](https://github.com/thenittygritty/linkpost-bookmarklet/blob/master/assets/js/bookmarklet/bookmarklet.js#L19). 
+Configure your bookmarklet in three simple steps:
 
-Set your local domain name [on line 21](https://github.com/thenittygritty/linkpost-bookmarklet/blob/master/assets/js/bookmarklet/bookmarklet.js#L21).
-
-Set the path to your linkpost.js script [on line 23](https://github.com/thenittygritty/linkpost-bookmarklet/blob/master/assets/js/bookmarklet/bookmarklet.js#L21).
+* Set the author shortname [on line 19](https://github.com/thenittygritty/linkpost-bookmarklet/blob/master/assets/js/bookmarklet/bookmarklet.js#L19). 
+* Set your local domain name [on line 21](https://github.com/thenittygritty/linkpost-bookmarklet/blob/master/assets/js/bookmarklet/bookmarklet.js#L21).
+* Set the path to your linkpost.js script [on line 23](https://github.com/thenittygritty/linkpost-bookmarklet/blob/master/assets/js/bookmarklet/bookmarklet.js#L21).
 
 ### 6. Minify Your Bookmarklet
 Run `npm install` and then `grunt` to get a fresh minified version of your configured bookmarklet.
