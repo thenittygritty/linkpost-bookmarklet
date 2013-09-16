@@ -41,17 +41,17 @@
         'z-index': 99999,
         padding: '15px',
         'font-weight': '400',
-                width: '100%',
-                'max-width': '500px',
-                top: '20px',
-                left: 0,
-                right: 0,
-                bottom: 0,
-                margin: 'auto',
-                '-webkit-box-shadow': '0 1px 3px rgba(0, 0, 0, 0.5)',
-                'box-shadow': '0 1px 3px rgba(0, 0, 0, 0.5)',
-                'border-radius': '5px',
-                float: 'none'
+        width: '100%',
+        'max-width': '500px',
+        top: '20px',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        margin: 'auto',
+        '-webkit-box-shadow': '0 1px 3px rgba(0, 0, 0, 0.5)',
+        'box-shadow': '0 1px 3px rgba(0, 0, 0, 0.5)',
+        'border-radius': '5px',
+        float: 'none'
       });
 
       h1 = BM.getStyledElement('h1', {
@@ -60,7 +60,7 @@
         'color': '#5b88bb',
         'margin': '0 0 15px 0',
         'text-transform': 'none',
-                float: 'none'
+        float: 'none'
       });
 
       logoSpan = BM.getStyledElement('span', {
@@ -68,7 +68,7 @@
         font: '300 20px/24px "Helvetica Neue", "Helvetica", sans-serif',
         'font-weight': 'bold',
         'padding-right': '10px',
-                float: 'none'
+        float: 'none'
       });
 
       // Set general styles for input elements.
@@ -82,7 +82,7 @@
         border: '1px solid #ccc',
         margin: '0 0 15px 0',
         'border-radius': '2px',
-                float: 'none'
+        float: 'none'
       };
 
       inputUrl    = BM.getStyledElement('input', inputStyles);
@@ -98,7 +98,7 @@
         height: '400px',
         border: '1px solid #ccc',
         'border-radius': '2px',
-                float: 'none'
+        float: 'none'
       });
 
       // The form element.
@@ -121,7 +121,7 @@
         'padding': '5px',
         position: 'absolute',
         right: '0',
-                float: 'none'
+        float: 'none'
       });
       // Add event listener and set callback.
       button.addEventListener('click', BM.createLinkPost);
@@ -165,7 +165,7 @@
       form.appendChild(h1);
       form.appendChild(inputTitle);
       form.appendChild(inputUrl);
-            form.appendChild(inputAuthor);
+      form.appendChild(inputAuthor);
       form.appendChild(textarea);
       buttonWrap.appendChild(button);
       form.appendChild(buttonWrap);
@@ -315,8 +315,8 @@
 
       var el        = document.getElementById('linkpostformcontainer');
       var dimmerdiv = document.getElementById('dimmerdiv');
-            document.body.removeChild(el);
-            document.body.removeChild(dimmerdiv);
+      document.body.removeChild(el);
+      document.body.removeChild(dimmerdiv);
 
       e.preventDefault();
     }
