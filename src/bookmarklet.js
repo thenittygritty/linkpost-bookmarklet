@@ -44,7 +44,7 @@ window[ MyNamespace ] = {
 };
 
 // Set version.
-var version = '1.8.1';
+var version = '1.9.0';
 
 // Load script.
 var script  = document.createElement( 'script' );
