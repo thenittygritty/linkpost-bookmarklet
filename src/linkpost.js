@@ -59,19 +59,6 @@
 
       return txt;
 		},
-		getStyledElement: function(type, styleObj) {
-			var el   = document.createElement(type);
-
-			el.style.cssText = '';
-
-			if (styleObj !== undefined) {
-				for (var style in styleObj) {
-					el.style.cssText += style + ':' + styleObj[style] + ' !important;';
-				}
-			}
-
-			return el;
-		},
 		createLinkPost: function(e) {
 
 			var formContainer = $('#tngbookmarklet');
