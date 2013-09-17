@@ -1,80 +1,80 @@
 ;(function(window, $) {
-	'use strict';
+  'use strict';
 
-	// Name your space.
-	var MyNamespace = 'w00t!';
-	var config = window[ MyNamespace ].config;
+  // Name your space.
+  var MyNamespace = 'w00t!';
+  var config = window[ MyNamespace ].config;
 
-	config.postUrl = 'http://' + config.domain + '/linkpost/';
+  config.postUrl = 'http://' + config.domain + '/linkpost/';
 
-	// BM for bookmarklet.
-	var BM = window[ MyNamespace ] = {
-		version: '1.9.0',
-		config: config,
-		init: function() {
+  // BM for bookmarklet.
+  var BM = window[ MyNamespace ] = {
+    version: '1.9.0',
+    config: config,
+    init: function() {
 
-			// Success!
+      // Success!
 
-			BM.appendForm();
+      BM.appendForm();
 
-			var form = $('#tngbookmarklet');
-			var button = form.find('#tngbm-button');
-			button.on('click', BM.createLinkPost);
+      var form = $('#tngbookmarklet');
+      var button = form.find('#tngbm-button');
+      button.on('click', BM.createLinkPost);
 
-			var closelink = form.find('.closelink');
-			closelink.on('click', function(e) {
-				BM.destroyBookmarklet();
-				e.preventDefault();
-			});
+      var closelink = form.find('.closelink');
+      closelink.on('click', function(e) {
+        BM.destroyBookmarklet();
+        e.preventDefault();
+      });
 
-			var inputTitle = document.getElementById('inputtitle');
-			console.log(inputTitle);
-			inputTitle.select();
-		},
-		appendForm: function() {
+      var inputTitle = document.getElementById('inputtitle');
+      console.log(inputTitle);
+      inputTitle.select();
+    },
+    appendForm: function() {
 
-			var selection = BM.getSelectionHtml();
-			if (selection) {
-				selection = '> ' + selection + '\n\n';
-			}
-			else {
-				selection = '';
-			}
-			var template = window.JST['assets/js/bookmarklet/templates/form.hbs'];
-			var context  = {
-				postUrl: window[ MyNamespace ].config.postUrl,
-				author: window[ MyNamespace ].config.author,
-				title: document.title,
-				link: window.location,
-				selection: selection
-			};
-			var linkpostform = template(context);
-			console.log(linkpostform);
-			// Add the newly created elements and content to the DOM.
-			$(linkpostform).appendTo('body');
-		},
-		getSelectionHtml: function() {
-			var selection = window.getSelection();
-			var txt       = selection.toString();
+      var selection = BM.getSelectionHtml();
+      if (selection) {
+        selection = '> ' + selection + '\n\n';
+      }
+      else {
+        selection = '';
+      }
+      var template = window.JST['assets/js/bookmarklet/templates/form.hbs'];
+      var context  = {
+        postUrl: window[ MyNamespace ].config.postUrl,
+        author: window[ MyNamespace ].config.author,
+        title: document.title,
+        link: window.location,
+        selection: selection
+      };
+      var linkpostform = template(context);
+      console.log(linkpostform);
+      // Add the newly created elements and content to the DOM.
+      $(linkpostform).appendTo('body');
+    },
+    getSelectionHtml: function() {
+      var selection = window.getSelection();
+      var txt       = selection.toString();
 
       return txt;
-		},
-		createLinkPost: function(e) {
+    },
+    createLinkPost: function(e) {
 
-			var formContainer = $('#tngbookmarklet');
-			var form          = formContainer.find('#linkpostform');
+      var formContainer = $('#tngbookmarklet');
+      var form          = formContainer.find('#linkpostform');
 
-			$.post(window[ MyNamespace ].config.postUrl, form.serialize(), function(response) {
-				console.log(response);
-			});
+      $.post(window[ MyNamespace ].config.postUrl, form.serialize(), function(response) {
+        console.log(response);
+      });
 
-			BM.destroyBookmarklet();
+      BM.destroyBookmarklet();
 
-			e.preventDefault();
-		},
-		destroyBookmarklet: function() {
-			$('#dimmerdiv').remove();
-			$('#tngbookmarklet').remove();
-		}
-	};
+      e.preventDefault();
+    },
+    destroyBookmarklet: function() {
+      $('#dimmerdiv').remove();
+      $('#tngbookmarklet').remove();
+    }
+  };
 }(window, Zepto));
