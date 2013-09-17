@@ -25,7 +25,7 @@
 			closelink.on('click', function(e) {
 				BM.destroyBookmarklet();
 				e.preventDefault();
-			})
+			});
 
 			var inputTitle = document.getElementById('inputtitle');
 			console.log(inputTitle);
@@ -57,7 +57,7 @@
 			var selection = window.getSelection();
 			var txt       = selection.toString();
 
-	        return txt;
+      return txt;
 		},
 		getStyledElement: function(type, styleObj) {
 			var el   = document.createElement(type);
@@ -69,8 +69,6 @@
 					el.style.cssText += style + ':' + styleObj[style] + ' !important;';
 				}
 			}
-
-			// el.style.cssText = font;
 
 			return el;
 		},
