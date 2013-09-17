@@ -1,0 +1,21 @@
+{
+  "name": "linkpost-bookmarklet",
+  "version": "1.8.1",
+  "homepage": "https://github.com/thenittygritty/linkpost-bookmarklet",
+  "authors": [
+    "Kahlil Lechelt <hello@kahlil.co>"
+  ],
+  "description": "TNG Linkpost Bookmarklet",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "handlebars": "~1.0.0"
+  }
+}

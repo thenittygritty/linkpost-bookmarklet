@@ -10,20 +10,23 @@ module.exports = function(grunt) {
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= pkg.license %> */\n',
-    // The path to the bookmarklet files.
-    bmpath: 'assets/js/bookmarklet',
     // Task configuration.
     uglify: {
       options: {
         banner: '<%= banner %>'
       },
       bookmarklet: {
-        src: '<%= bmpath %>/bookmarklet.js',
-        dest: '<%= bmpath %>/bookmarklet.min.js'
+        src: 'src/bookmarklet.js',
+        dest: 'dist/bookmarklet.min.js'
       },
       linkpost: {
-        src: '<%= bmpath %>/linkpost.js',
-        dest: '<%= bmpath %>/linkpost.min.js'
+        src: [
+          'src/zepto.js',
+          'bower_components/handlebars/handlebars.runtime.js',
+          'src/templates/form.js',
+          'src/linkpost.js'
+        ],
+        dest: 'dist/linkpost.min.js'
       }
     },
     jshint: {
@@ -50,10 +53,14 @@ module.exports = function(grunt) {
         src: ['lib/**/*.js', 'test/**/*.js']
       }
     },
-    watch: {
-      gruntfile: {
-          files: '<%= jshint.gruntfile.src %>',
-          tasks: ['jshint:gruntfile']
+    handlebars: {
+      compile: {
+        options: {
+          namespace: "JST"
+        },
+        files: {
+          "src/templates/form.js": "src/templates/form.hbs"
+        }
       }
     }
   });
@@ -63,8 +70,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-handlebars');
 
   // Default task.
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['handlebars', 'uglify']);
 
 };
