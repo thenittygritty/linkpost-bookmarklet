@@ -62,10 +62,10 @@ script.onload = script.onreadystatechange = function() {
         // initialise or warn if older version
         console.log(version, window[ MyNamespace ].version);
         if ( version !== window[ MyNamespace ].version ) {
-            window.alert( 'This bookmarklet is out of date!' );
+          window.alert( 'This bookmarklet is out of date!' );
         } else {
-      dimmerDiv.removeChild( loadingEl );
-            window[ MyNamespace ].init();
+          dimmerDiv.removeChild( loadingEl );
+          window[ MyNamespace ].init();
         }
     }
 };
