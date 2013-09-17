@@ -14,13 +14,13 @@ loadingEl.appendChild( loadingTxt );
 loadingEl.id = 'loadingtxt';
 
 loadingEl.style.cssText = 'z-index: 99998; position: fixed; top: 50%; left: 50%;' +
-	'width: 100px; margin-left: -50px; height: 24px; margin-top: -12px;' +
-	'text-align: center; display: block;' +
-	'font: normal 20px/24px "Helvetica Neue", "Helvetica", sans-serif;';
+  'width: 100px; margin-left: -50px; height: 24px; margin-top: -12px;' +
+  'text-align: center; display: block;' +
+  'font: normal 20px/24px "Helvetica Neue", "Helvetica", sans-serif;';
 
 dimmerDiv.style.cssText = 'position: fixed; z-index: 99997; background-color: white;' +
-	'opacity: 0.5; height: 100%; width: 100%; position: fixed;' +
-	'top: 0; left: 0; float: none;';
+  'opacity: 0.5; height: 100%; width: 100%; position: fixed;' +
+  'top: 0; left: 0; float: none;';
 
 dimmerDiv.id = 'dimmerdiv';
 dimmerDiv.appendChild( loadingEl );
@@ -36,11 +36,11 @@ if ( window[ MyNamespace ] ) {
     return;
 }
 window[ MyNamespace ] = {
-	config: {
-		author: 'kahlil-lechelt',
-		domain: 'tng.dev',
-		scriptUrl: 'http://tng.dev/assets/dist/bookmarklet/linkpost.min.js'
-	}
+  config: {
+    author: 'kahlil-lechelt',
+    domain: 'tng.dev',
+    scriptUrl: 'http://tng.dev/assets/dist/bookmarklet/linkpost.min.js'
+  }
 };
 
 // Set version.
@@ -64,7 +64,7 @@ script.onload = script.onreadystatechange = function() {
         if ( version !== window[ MyNamespace ].version ) {
             window.alert( 'This bookmarklet is out of date!' );
         } else {
-			dimmerDiv.removeChild( loadingEl );
+      dimmerDiv.removeChild( loadingEl );
             window[ MyNamespace ].init();
         }
     }
